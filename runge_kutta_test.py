@@ -25,6 +25,5 @@ def test_runge_kutta():
         print(f"y={custom_solution['y'][i]}, dy={custom_solution['dy'][i]}")
         print(f"skipy_y={scipy_solution[i, 0]}, skipy_dy={scipy_solution[i, 1]}")
     
-    # Compare results
     assert np.allclose(custom_solution['y'], scipy_solution[:, 0], atol=step)
     assert np.allclose(custom_solution['dy'], scipy_solution[:, 1], atol=step)
